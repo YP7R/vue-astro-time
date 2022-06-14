@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+### Tailwind + Vite
+Installation of a css framework
+* [( Documentation )](https://tailwindcss.com/docs/guides/vite)
