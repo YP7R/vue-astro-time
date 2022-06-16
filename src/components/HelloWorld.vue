@@ -123,21 +123,21 @@ let computedHMSSiderealTime = computed(() => {
     "
   >
     <div class="w-screen py-10 bg-gray-900 justify-center items-center text-white">
-      <h1 class="mb-6 text-6xl font-extrabold">{{ computedLocalDate }}</h1>
+      <h1 class="mb-4 text-6xl font-extrabold">{{ computedLocalDate }}</h1>
       <p class="text-2xl font-bold text-[#989898]">Heure locale</p>
     </div>
     <div class="w-screen py-10 bg-[#989898] justify-center items-center">
-      <h1 class=" mb-6 text-6xl font-extrabold">{{ computedUtcDate }}</h1>
-      <p class="text-2xl font-bold text-white">Heure UTC</p>
+      <h1 class=" mb-4 text-6xl font-extrabold">{{ computedUtcDate }}</h1>
+      <p class="text-2xl font-bold text-white">Heure UTC (Temps universel coordonné)</p>
     </div>
 
     <div class="w-screen py-10 bg-gray-900 justify-center items-center  text-white">
-      <h1 class="mb-6 text-6xl font-extrabold">{{ computedDMSSiderealTime }}</h1>
-      <p class="text-2xl font-bold text-[#989898]">Heure sidérale (deg:min:sec)</p>
+      <h1 class="mb-4 text-6xl font-extrabold">{{ computedDMSSiderealTime }}</h1>
+      <p class="text-2xl font-bold text-[#989898]">Heure sidérale (deg.:min.:sec.)</p>
     </div>
     <div class="w-screen py-10 bg-[#989898] justify-center items-center ">
-      <h1 class="mb-6 text-6xl font-extrabold">{{ computedHMSSiderealTime }}</h1>
-      <p class="text-2xl font-bold text-white">Heure sidérale (hour:min:sec)</p>
+      <h1 class="mb-4 text-6xl font-extrabold">{{ computedHMSSiderealTime }}</h1>
+      <p class="text-2xl font-bold text-white">Heure sidérale (heure:min.:sec.)</p>
     </div>
 
   </div>
