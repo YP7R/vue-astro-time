@@ -67,10 +67,16 @@ let computedDMSSiderealTime = computed(() => {
   let rest = totalSeconds % (60 * 60);
   let minutes = Math.floor(rest / 60);
   let seconds = rest % 60;
-  
-  let minutesFormatted = Math.floor(minutes).toLocaleString("fr-CH", optionsMinutes)
-  let secondsFormatted = Math.floor(seconds).toLocaleString("fr-CH", optionsSeconds)
-  
+
+  let minutesFormatted = Math.floor(minutes).toLocaleString(
+    "fr-CH",
+    optionsMinutes
+  );
+  let secondsFormatted = Math.floor(seconds).toLocaleString(
+    "fr-CH",
+    optionsSeconds
+  );
+
   return `${degree}° ${minutesFormatted}m ${secondsFormatted}s`;
 });
 
@@ -89,28 +95,65 @@ let computedHMSSiderealTime = computed(() => {
   }
   hours = hours % 24;
 
-  let hoursFormatted = hours.toLocaleString("fr-CH", optionsHours)
-  let minutesFormatted = Math.floor(minutes).toLocaleString("fr-CH", optionsMinutes)
-  let secondsFormatted = Math.floor(seconds).toLocaleString("fr-CH", optionsSeconds)
-  return `${hoursFormatted}:${minutesFormatted}:${secondsFormatted}`
-});
-
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
+  let hoursFormatted = hours.toLocaleString("fr-CH", optionsHours);
+  let minutesFormatted = Math.floor(minutes).toLocaleString(
+    "fr-CH",
+    optionsMinutes
+  );
+  let secondsFormatted = Math.floor(seconds).toLocaleString(
+    "fr-CH",
+    optionsSeconds
+  );
+  return `${hoursFormatted}:${minutesFormatted}:${secondsFormatted}`;
 });
 </script>
 
 <template>
-  <div>
-    Hello
-    <p>{{ computedUtcDate }}</p>
-    <p>{{ computedLocalDate }}</p>
-    <p>{{ computedDMSSiderealTime }}</p>
-    <p>{{ computedHMSSiderealTime }}</p>
+  <div
+    class="
+      flex flex-row flex-wrap
+    
+      w-screen
+      h-screen
+      text-center
+      content-center
+      justify-center
+      items-center
+      font-mono
+    "
+  >
+    <div class="w-screen py-10 bg-gray-900 justify-center items-center text-white">
+      <h1 class="mb-6 text-6xl font-extrabold">{{ computedLocalDate }}</h1>
+      <p class="text-2xl font-bold text-[#989898]">Heure locale</p>
+    </div>
+    <div class="w-screen py-10 bg-[#989898] justify-center items-center">
+      <h1 class=" mb-6 text-6xl font-extrabold">{{ computedUtcDate }}</h1>
+      <p class="text-2xl font-bold text-white">Heure UTC</p>
+    </div>
+
+    <div class="w-screen py-10 bg-gray-900 justify-center items-center  text-white">
+      <h1 class="mb-6 text-6xl font-extrabold">{{ computedDMSSiderealTime }}</h1>
+      <p class="text-2xl font-bold text-[#989898]">Heure sidérale (deg:min:sec)</p>
+    </div>
+    <div class="w-screen py-10 bg-[#989898] justify-center items-center ">
+      <h1 class="mb-6 text-6xl font-extrabold">{{ computedHMSSiderealTime }}</h1>
+      <p class="text-2xl font-bold text-white">Heure sidérale (hour:min:sec)</p>
+    </div>
+
   </div>
+  <!--
+  <div
+    class="
+      flex flex-row
+      justify-center justify-items-center
+      items-center
+      bg-slate-500
+      py-12
+      w-full
+    "
+  >
+
+  -->
   <!---
   <div class="w-auto h-80 my-20">
     <div class="flex flex-row p-6 bg-black text-white font-mono text-center">
